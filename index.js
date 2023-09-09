@@ -1,6 +1,6 @@
 import {fetchWorkList} from './fetch.js'
 import {sendMessage} from './bot.js'
-var OldLengthOfWork = null;
+export var OldLengthOfWork = null;
 
 const loop = async  () => {
 
