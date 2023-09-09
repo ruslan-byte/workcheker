@@ -1,7 +1,7 @@
 import {fetchWorkList} from './fetch.js'
-import {sendMessage} from './bot.js'
+import {sendMessage, init} from './bot.js'
 export var OldLengthOfWork = null;
-
+init()
 const loop = async  () => {
 
   let workList = await fetchWorkList();

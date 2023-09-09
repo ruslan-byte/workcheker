@@ -5,13 +5,17 @@ const token = '5809020048:AAG-9ao4idHh14mMuL4iT9NMsC2nx_KNn04';
 const MyChatId = '937824793';
 
 // Create a bot that uses 'polling' to fetch new updates
-const bot = new TelegramBot(token, {polling: true});
-bot.on('message', (msg) => {
-	if(msg.text === "test")
-  		bot.sendMessage(MyChatId, 'Работаем вроде.');
-  	if(msg.text === "?")
-  		bot.sendMessage(MyChatId, OldLengthOfWork);
-});
+var bot = null;
+export function init() 
+{
+	bot = new TelegramBot(token, {polling: true});
+	console.log("BOT INIT");
+	bot.on('message', (msg) => {
+			bot.sendMessage(MyChatId, 'Работаем вроде.');
+			bot.sendMessage(MyChatId, OldLengthOfWork);
+	});
+}
+
 
 export function sendMessage(message)
 {
